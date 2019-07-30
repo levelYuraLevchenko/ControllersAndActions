@@ -13,5 +13,17 @@ namespace ControllersAndActions.Controllers
             ViewBag.Message = "Hello from the DerivedController Index method";
             return View("MyView");
         }
+
+        public void ProductOutput()
+        {
+            if(Server.MachineName == "TINY")
+            {
+                Response.Redirect("/Basic/Index");
+            }
+            else
+            {
+                Response.Write("Controller: Derived, Action: Index");
+            }
+        }
     }
 }
