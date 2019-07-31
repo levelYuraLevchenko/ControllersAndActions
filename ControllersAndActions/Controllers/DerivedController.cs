@@ -17,15 +17,7 @@ namespace ControllersAndActions.Controllers
 
         public ActionResult ProductOutput()
         {
-            if(Server.MachineName == "TINY")
-            {
-                return new CustomRedirectResult { Url = "/Basic/Index" };
-            }
-            else
-            {
-                Response.Write("Controller: Derived, Action: Index");
-                return null;
-            }
+            return Redirect("/Basic/Index");
         }
     }
 }
