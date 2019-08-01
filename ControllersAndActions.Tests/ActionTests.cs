@@ -17,5 +17,17 @@ namespace ControllersAndActions.Tests
             // Утверждение - проверка результата
             Assert.AreEqual("", result.ViewName);
         }
+
+        [TestMethod]
+        public void ViewSelectionTest()
+        {
+            // Организация - создание контроллера
+            ExampleController target = new ExampleController();
+            // Действие - вызов метода действия
+            ViewResult result = target.Index();
+            // Утверждение - проверка результата
+            Assert.AreEqual("", result.ViewName);
+            Assert.IsInstanceOfType(result.ViewData.Model, typeof(System.DateTime));
+        }
     }
 }
