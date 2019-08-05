@@ -15,7 +15,7 @@ namespace ControllersAndActions.Tests
             // Действие - вызов метода действия
             ViewResult result = target.Index();
             // Утверждение - проверка результата
-            Assert.AreEqual("", result.ViewName);
+            Assert.AreEqual("Hello", result.ViewBag.Message);
         }
 
         [TestMethod]
