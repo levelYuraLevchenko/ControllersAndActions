@@ -13,9 +13,10 @@ namespace ControllersAndActions.Tests
             // Организация - создание контроллера
             ExampleController target = new ExampleController();
             // Действие - вызов метода действия
-            ViewResult result = target.Index();
+            RedirectResult result = target.Redirect();
             // Утверждение - проверка результата
-            Assert.AreEqual("Hello", result.ViewBag.Message);
+            Assert.IsTrue(result.Permanent);
+            Assert.AreEqual("/Example/Index", result.Url);
         }
 
         [TestMethod]
