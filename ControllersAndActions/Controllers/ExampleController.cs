@@ -22,8 +22,8 @@ namespace ControllersAndActions.Controllers
 
         public HttpStatusCodeResult StatusCode()
         {
-            // URL не может быть обслужен
-            return new HttpStatusCodeResult(404, "URL cannot be serviced");
+            //return HttpNotFound(); // 404
+            return new HttpUnauthorizedResult();
         }
     }
 }

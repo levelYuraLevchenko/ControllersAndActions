@@ -13,12 +13,9 @@ namespace ControllersAndActions.Tests
             // Организация - создание контроллера
             ExampleController target = new ExampleController();
             // Действие - вызов метода действия
-            RedirectToRouteResult result = target.Redirect();
+            HttpStatusCodeResult result = target.StatusCode();
             // Утверждение - проверка результата
-            Assert.IsFalse(result.Permanent);
-            Assert.AreEqual("Example", result.RouteValues["controller"]);
-            Assert.AreEqual("Index", result.RouteValues["action"]);
-            Assert.AreEqual("MyID", result.RouteValues["ID"]);
+            Assert.AreEqual(401, result.StatusCode);
         }
 
         [TestMethod]
