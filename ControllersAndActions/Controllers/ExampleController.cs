@@ -10,14 +10,16 @@ namespace ControllersAndActions.Controllers
     {
         public ViewResult Index()
         {
-            ViewBag.Message = "Hello";
-            ViewBag.Date = DateTime.Now;
+            ViewBag.Message = TempData["Message"];
+            ViewBag.Date = TempData["Date"];
             return View();
         }
 
-        public RedirectToRouteResult Redirect()
+        public RedirectToRouteResult RedirectToRoute()
         {
-            return RedirectToAction("Index", "Basic");
+            TempData["Message"] = "Hello";
+            TempData["Date"] = DateTime.Now;
+            return RedirectToAction("Index");
         }
     }
 }

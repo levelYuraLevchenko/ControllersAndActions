@@ -13,7 +13,7 @@ namespace ControllersAndActions.Tests
             // Организация - создание контроллера
             ExampleController target = new ExampleController();
             // Действие - вызов метода действия
-            RedirectToRouteResult result = target.Redirect();
+            RedirectToRouteResult result = target.RedirectToRoute();
             // Утверждение - проверка результата
             Assert.IsFalse(result.Permanent);
             Assert.AreEqual("Example", result.RouteValues["controller"]);
